@@ -23,7 +23,7 @@ jobs:
       - name: Find all links
         run: curl --silent example.com | htmlq --attribute href a
 
-  setup-htmlq-os:
+  setup-htmlq-version:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
