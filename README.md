@@ -1,2 +1,7 @@
 # setup-htmlq-demo
-Demo GitHub Actions workflow for setup-htmlq
+
+[`setup-htmlq`](https://github.com/remarkablemark/setup-htmlq) GitHub Action demo.
+
+## License
+
+[MIT](LICENSE)
