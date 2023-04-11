@@ -23,9 +23,6 @@ jobs:
       - name: Find all links
         run: curl --silent example.com | htmlq --attribute href a
 
-      - name: Syntax highlighting with bat
-        run: curl --silent example.com | htmlq 'body' | bat --language html
-
   setup-htmlq-os:
     strategy:
       matrix:
