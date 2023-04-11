@@ -1,0 +1,43 @@
+name: setup-htmlq
+on: [push, pull_request]
+
+jobs:
+  setup-htmlq:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup htmlq
+        uses: remarkablemark/setup-htmlq@v1.0.0
+
+      - name: Print version
+        run: htmlq --version
+
+      - name: Print help
+        run: htmlq --help
+
+      - name: Find all paragraphs
+        run: curl --silent example.com | htmlq p
+
+      - name: Get the text content of heading
+        run: curl --silent example.com | htmlq --text h1
+
+      - name: Find all links
+        run: curl --silent example.com | htmlq --attribute href a
+
+      - name: Syntax highlighting with bat
+        run: curl --silent example.com | htmlq 'body' | bat --language html
+
+  setup-htmlq-os:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        # 0.2.0 is not supported
+        version: [0.3.0, 0.4.0]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Setup htmlq
+        uses: remarkablemark/setup-htmlq@v1
+        with:
+          htmlq-version: ${{ matrix.version }}
+
+      - name: Print version
+        run: htmlq --version
