@@ -38,3 +38,17 @@ jobs:
 
       - name: Print version
         run: htmlq --version
+
+  setup-htmlq-cli-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup htmlq
+        uses: remarkablemark/setup-htmlq@v2
+        with:
+          cli-name: htmlq-cli
+
+      - name: Print version
+        run: htmlq-cli --version
+
+      - name: Locate executable
+        run: command -v htmlq-cli
