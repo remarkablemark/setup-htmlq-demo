@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup htmlq
-        uses: remarkablemark/setup-htmlq@v2
+        uses: remarkablemark/setup-htmlq@v3
 
       - name: Print version
         run: htmlq --version
@@ -32,7 +32,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Setup htmlq
-        uses: remarkablemark/setup-htmlq@v2
+        uses: remarkablemark/setup-htmlq@v3
         with:
           htmlq-version: ${{ matrix.version }}
 
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup htmlq
-        uses: remarkablemark/setup-htmlq@v2
+        uses: remarkablemark/setup-htmlq@v3
         with:
           cli-name: htmlq-cli
 
